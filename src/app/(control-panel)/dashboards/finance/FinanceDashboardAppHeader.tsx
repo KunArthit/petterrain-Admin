@@ -1,0 +1,59 @@
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
+import PageBreadcrumb from 'src/components/PageBreadcrumb';
+import { useTranslation } from 'react-i18next';
+
+/**
+ * The FinanceDashboardAppHeader component.
+ */
+function FinanceDashboardAppHeader() {
+	const { t } = useTranslation('financePage');
+
+	return (
+		<div className='flex w-full container'>
+			<div className='flex flex-col sm:flex-row flex-auto sm:items-center min-w-0 p-24 md:p-32 pb-0 md:pb-0'>
+				<div className='flex flex-col flex-auto'>
+					<PageBreadcrumb className='mb-8' />
+					<Typography className='text-3xl font-semibold tracking-tight leading-8'>
+						{t('Finance dashboard')}
+					</Typography>
+					<Typography
+						className='font-medium tracking-tight'
+						color='text.secondary'
+					>
+						{t('Keep track of your financial status')}
+					</Typography>
+				</div>
+				{/* <div className='flex items-center mt-24 sm:mt-0 sm:mx-8 space-x-8'>
+					<Button
+						className='whitespace-nowrap'
+						startIcon={<FuseSvgIcon size={20}>heroicons-solid:document-chart-bar</FuseSvgIcon>}
+						variant='contained'
+						color='primary'
+					>
+						{t('Reports')}
+					</Button>
+					<Button
+						className='whitespace-nowrap'
+						startIcon={<FuseSvgIcon size={20}>heroicons-solid:cog-6-tooth</FuseSvgIcon>}
+						variant='contained'
+						color='primary'
+					>
+						{t('Settings')}
+					</Button>
+					<Button
+						className='whitespace-nowrap'
+						variant='contained'
+						color='secondary'
+						startIcon={<FuseSvgIcon size={20}>heroicons-solid:arrow-up-tray</FuseSvgIcon>}
+					>
+						{t('Export')}
+					</Button>
+				</div> */}
+			</div>
+		</div>
+	);
+}
+
+export default FinanceDashboardAppHeader;
